@@ -1,0 +1,23 @@
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\appsettings.Development.json
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\appsettings.json
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Budget Tracker.exe
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Budget Tracker.deps.json
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Budget Tracker.runtimeconfig.json
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Budget Tracker.runtimeconfig.dev.json
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Budget Tracker.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\ref\Budget Tracker.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Budget Tracker.pdb
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.csproj.AssemblyReference.cache
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.GeneratedMSBuildEditorConfig.editorconfig
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.AssemblyInfoInputs.cache
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.AssemblyInfo.cs
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.csproj.CoreCompileInputs.cache
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.MvcApplicationPartsAssemblyInfo.cache
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\staticwebassets\Budget Tracker.StaticWebAssets.Manifest.cache
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\staticwebassets\Budget Tracker.StaticWebAssets.xml
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\scopedcss\bundle\Budget Tracker.styles.css
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.RazorTargetAssemblyInfo.cache
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\ref\Budget Tracker.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.pdb
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.genruntimeconfig.cache
