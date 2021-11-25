@@ -21,3 +21,11 @@ D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.
 D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\ref\Budget Tracker.dll
 D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.pdb
 D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.genruntimeconfig.cache
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Npgsql.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\obj\Debug\net5.0\Budget Tracker.csproj.CopyComplete
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\budget-tracker\Budget Tracker\Budget Tracker\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
