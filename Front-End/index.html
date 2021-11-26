@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+<!--
+Template Name: Metronic - Bootstrap 4 HTML, React, Angular 9 & VueJS Admin Dashboard Theme
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: https://1.envato.market/EA4JP
+Renew Support: https://1.envato.market/EA4JP
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+
+<html lang="en">
+  <!--begin::Head-->
+  <head>
+    <meta charset="utf-8" />
+    <title>Budget Tracker</title>
+
+    <!--begin::Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
+    />
+    <link href="./assets/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!--end::Fonts-->
+    <!--begin::Page Vendors Styles(used by this page)-->
+    <!--end::Page Vendors Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+
+    <link
+      href="./assets/plugins/global/plugins.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./assets/plugins/custom/prismjs/prismjs.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./assets/css/style.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--end::Global Theme Styles-->
+  </head>
+
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body
+    id="kt_body"
+    class="
+      quick-panel-right
+      demo-panel-right
+      offcanvas-right
+      header-fixed header-mobile-fixed
+      subheader-enabled
+      aside-enabled aside-static
+      page-loading
+    "
+  >
+    <!--begin::Main-->
+    <div class="d-flex flex-column flex-root">
+      <!--begin::Page-->
+      <div class="d-flex flex-row flex-column-fluid page">
+        <!--begin::Wrapper-->
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+          <!--begin::Header-->
+          <div id="kt_header" class="header header-fixed d-print-none">
+            <!--begin::Container-->
+            <div
+              class="
+                container
+                d-flex
+                align-items-stretch
+                justify-content-between
+              "
+            >
+              <!--begin::Left-->
+              <div class="d-none d-lg-flex align-items-center mr-3">
+                <!--begin::Desktop Search-->
+                <div
+                  class="quick-search quick-search-inline ml-20 w-300px"
+                  id="kt_quick_search_inline"
+                >
+                  <h1>Budget Tracker</h1>
+                </div>
+                <!--end::Desktop Search-->
+              </div>
+              <!--end::Left-->
+            </div>
+            <!--end::Container-->
+          </div>
+          <!--end::Header-->
+          <!--begin::Content-->
+          <div
+            class="content d-flex flex-column flex-column-fluid"
+            id="kt_content"
+          >
+            <div class="d-flex flex-column-fluid">
+              <!--begin::Container-->
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <!-- begin::Main Content -->
+                    <div class="card card-custom">
+                      <div class="right-sec-op-bill">
+                        <div class="head-bg-op">
+                          <div class="row justify-content-between">
+                            <div class="col-lg-4">
+                              <input type="hidden" name="patientId" />
+
+                              <div class="row align-items-center">
+                                <label class="col-4 col-form-label">
+                                  Transactions
+                                </label>
+                              </div>
+                            </div>
+
+                            <div
+                              class="
+                                col-lg-3
+                                d-flex
+                                justify-content-end
+                                btn-head-content
+                              "
+                            >
+                              <button
+                                type="button"
+                                class="btn btn-light-primary btn-md"
+                                data-toggle="modal"
+                                data-target="#addTransactionModal"
+                              >
+                                <i class="fas fa-plus"></i>Add
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="body-op-bill-right">
+                          <div class="body-content-right-op">
+                            <div class="content-tbl-op">
+                              <table class="table" id="tblTransactions">
+                                <thead>
+                                  <tr>
+                                    <th>ID</th>
+                                    <th>Description</th>
+                                    <th>Transaction Amount</th>
+                                    <th>Create Date</th>
+                                    <th>Actions</th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                            <div class="col-lg-12">
+                              <div
+                                class="
+                                  row
+                                  align-items-center
+                                  justify-content-end
+                                "
+                              >
+                                <label class="font-weight-bold">
+                                  Total Transactions Sum:
+                                </label>
+                                &nbsp;
+                                <label
+                                  class="font-weight-bold"
+                                  id="totalSumValue"
+                                >
+                                  0
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- begin::Add Transaction Modal-->
+                    <div
+                      class="modal fade"
+                      id="addTransactionModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="exampleModalSizeLg"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-dialog-centered modal-lg"
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Add Transaction</h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <i aria-hidden="true" class="ki ki-close"></i>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="mb-15">
+                              <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">
+                                  Description:
+                                </label>
+                                <div class="col-lg-9">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="addDescription"
+                                    autocomplete="off"
+                                  />
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">
+                                  Transaction Amount:
+                                </label>
+                                <div class="col-lg-9">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    id="addTransactionAmount"
+                                    autocomplete="off"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-light-primary font-weight-bold"
+                              data-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary font-weight-bold"
+                              onclick="addTransaction()"
+                            >
+                              Ok
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end::Add Transaction Modal-->
+
+                    <!-- begin::Edit Transaction Modal-->
+                    <div
+                      class="modal fade"
+                      id="editTransactionModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="exampleModalSizeLg"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-dialog-centered modal-lg"
+                        role="document"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Edit Transaction</h5>
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                            >
+                              <i aria-hidden="true" class="ki ki-close"></i>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <input type="hidden" id="editId" />
+
+                            <div class="mb-15">
+                              <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">
+                                  Description:
+                                </label>
+                                <div class="col-lg-9">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="editDescription"
+                                    autocomplete="off"
+                                  />
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-lg-3 col-form-label">
+                                  Transaction Amount:
+                                </label>
+                                <div class="col-lg-9">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    id="editTransactionAmount"
+                                    autocomplete="off"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-light-primary font-weight-bold"
+                              data-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary font-weight-bold"
+                              onclick="editTransaction()"
+                            >
+                              Ok
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end::Edit Transaction Modal-->
+
+                    <!-- end::Main Content -->
+                  </div>
+                </div>
+              </div>
+              <!--end::Container-->
+            </div>
+          </div>
+          <!--end::Content-->
+
+          <!--begin::Footer-->
+          <div
+            class="footer bg-white py-4 d-flex flex-lg-column"
+            id="kt_footer"
+          >
+            <!--begin::Container-->
+            <div
+              class="
+                container
+                d-flex
+                flex-column flex-md-row
+                align-items-center
+                justify-content-between
+              "
+            >
+              <!--begin::Copyright-->
+              <div class="text-dark order-2 order-md-1">
+                <span class="text-muted font-weight-bold mr-2">2020©</span>
+                <a
+                  href="http://keenthemes.com/metronic"
+                  target="_blank"
+                  class="text-dark-75 text-hover-primary"
+                  >Keenthemes</a
+                >
+              </div>
+
+              <!--end::Copyright-->
+
+              <!--begin::Nav-->
+              <div class="nav nav-dark order-1 order-md-2">
+                <a
+                  href="http://keenthemes.com/metronic"
+                  target="_blank"
+                  class="nav-link pr-3 pl-0"
+                  >About</a
+                >
+                <a
+                  href="http://keenthemes.com/metronic"
+                  target="_blank"
+                  class="nav-link px-3"
+                  >Team</a
+                >
+                <a
+                  href="http://keenthemes.com/metronic"
+                  target="_blank"
+                  class="nav-link pl-3 pr-0"
+                  >Contact</a
+                >
+              </div>
+
+              <!--end::Nav-->
+            </div>
+
+            <!--end::Container-->
+          </div>
+
+          <!--end::Footer-->
+        </div>
+
+        <!--end::Wrapper-->
+      </div>
+
+      <!--end::Page-->
+    </div>
+
+    <!--end::Main-->
+
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>
+      var KTAppSettings = {
+        breakpoints: {
+          sm: 576,
+          md: 768,
+          lg: 992,
+          xl: 1200,
+          xxl: 1200,
+        },
+        colors: {
+          theme: {
+            base: {
+              white: '#ffffff',
+              primary: '#6993FF',
+              secondary: '#E5EAEE',
+              success: '#1BC5BD',
+              info: '#8950FC',
+              warning: '#FFA800',
+              danger: '#F64E60',
+              light: '#F3F6F9',
+              dark: '#212121',
+            },
+            light: {
+              white: '#ffffff',
+              primary: '#E1E9FF',
+              secondary: '#ECF0F3',
+              success: '#C9F7F5',
+              info: '#EEE5FF',
+              warning: '#FFF4DE',
+              danger: '#FFE2E5',
+              light: '#F3F6F9',
+              dark: '#D6D6E0',
+            },
+            inverse: {
+              white: '#ffffff',
+              primary: '#ffffff',
+              secondary: '#212121',
+              success: '#ffffff',
+              info: '#ffffff',
+              warning: '#ffffff',
+              danger: '#ffffff',
+              light: '#464E5F',
+              dark: '#ffffff',
+            },
+          },
+          gray: {
+            'gray-100': '#F3F6F9',
+            'gray-200': '#ECF0F3',
+            'gray-300': '#E5EAEE',
+            'gray-400': '#D6D6E0',
+            'gray-500': '#B5B5C3',
+            'gray-600': '#80808F',
+            'gray-700': '#464E5F',
+            'gray-800': '#1B283F',
+            'gray-900': '#212121',
+          },
+        },
+        'font-family': 'Poppins',
+      };
+    </script>
+
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="./assets/plugins/global/plugins.bundle.js"></script>
+    <script src="./assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+    <script src="./assets/js/scripts.bundle.js"></script>
+
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Vendors(used by this page)-->
+
+    <script src="./Scripts/jquery.validate.min.js"></script>
+    <script src="./Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <!--end::Page Vendors-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="./assets/js/pages/widgets.js"></script>
+    <script src="./Scripts/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript">
+      const BASE_URL = 'https://localhost:44343';
+      const TRANSACTIONS_URL = `${BASE_URL}/BudgetTransactions`;
+
+      const EDIT_ICON = `<!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo5\dist/../src/media/svg/icons\Design\Edit.svg-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <path d="M8,17.9148182 L8,5.96685884 C8,5.56391781 8.16211443,5.17792052 8.44982609,4.89581508 L10.965708,2.42895648 C11.5426798,1.86322723 12.4640974,1.85620921 13.0496196,2.41308426 L15.5337377,4.77566479 C15.8314604,5.0588212 16,5.45170806 16,5.86258077 L16,17.9148182 C16,18.7432453 15.3284271,19.4148182 14.5,19.4148182 L9.5,19.4148182 C8.67157288,19.4148182 8,18.7432453 8,17.9148182 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 10.707409) rotate(-135.000000) translate(-12.000000, -10.707409) " />
+                                        <rect fill="#000000" opacity="0.3" x="5" y="20" width="15" height="2" rx="1" />
+                                    </g>
+                                </svg>
+                            <!--end::Svg Icon-->`;
+
+      const DELETE_ICON = `<!--begin::Svg Icon | path:C:\wamp64\www\keenthemes\themes\metronic\theme\html\demo5\dist/../src/media/svg/icons\Code\Error-circle.svg-->
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24" />
+                                        <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
+                                        <path d="M12.0355339,10.6213203 L14.863961,7.79289322 C15.2544853,7.40236893 15.8876503,7.40236893 16.2781746,7.79289322 C16.6686989,8.18341751 16.6686989,8.81658249 16.2781746,9.20710678 L13.4497475,12.0355339 L16.2781746,14.863961 C16.6686989,15.2544853 16.6686989,15.8876503 16.2781746,16.2781746 C15.8876503,16.6686989 15.2544853,16.6686989 14.863961,16.2781746 L12.0355339,13.4497475 L9.20710678,16.2781746 C8.81658249,16.6686989 8.18341751,16.6686989 7.79289322,16.2781746 C7.40236893,15.8876503 7.40236893,15.2544853 7.79289322,14.863961 L10.6213203,12.0355339 L7.79289322,9.20710678 C7.40236893,8.81658249 7.40236893,8.18341751 7.79289322,7.79289322 C8.18341751,7.40236893 8.81658249,7.40236893 9.20710678,7.79289322 L12.0355339,10.6213203 Z" fill="#000000" />
+                                    </g>
+                                </svg>
+                            <!--end::Svg Icon-->`;
+
+      function onFailure() {
+        swal.fire({
+          title: 'Error!',
+          text: 'Error Occurred',
+          icon: 'error',
+          confirmButtonText: 'Close',
+        });
+      }
+
+      function KTAppBlock() {
+        KTApp.block('#kt_content', {
+          overlayColor: '#000000',
+          type: 'v2',
+          icon: 'success',
+          message: 'Please Wait',
+        });
+      }
+
+      function unblock() {
+        KTApp.unblock('#kt_content');
+      }
+
+      function editButton(id) {
+        return `
+          <button type="button" class="btn btn-icon btn-light btn-hover-primary btn-sm btn-edit-transaction" data-transaction-id="${id}">
+              <span class="svg-icon svg-icon-md svg-icon-primary">
+                  ${EDIT_ICON}
+              </span>
+          </button>
+        `;
+      }
+
+      function deleteButton(id) {
+        return `
+          <button type="button" class="btn btn-icon btn-light btn-hover-primary btn-sm btn-delete-transaction" data-transaction-id="${id}">
+              <span class="svg-icon svg-icon-md svg-icon-primary">
+                  ${DELETE_ICON}
+              </span>
+          </button>
+        `;
+      }
+
+      function handleEdit() {
+        $(document).on('click', '.btn-edit-transaction', function () {
+          // Get data.
+          const id = $(this)
+            .closest('tr')
+            .find('.transaction-id')
+            .text()
+            .trim();
+
+          const description = $(this)
+            .closest('tr')
+            .find('.transaction-description')
+            .text()
+            .trim();
+
+          const amount = $(this)
+            .closest('tr')
+            .find('.transaction-amount')
+            .text()
+            .trim();
+
+          $('#editId').val(id);
+          $('#editDescription').val(description);
+          $('#editTransactionAmount').val(amount);
+
+          // Show edit modal.
+          $('#editTransactionModal').modal('toggle');
+        });
+      }
+
+      function editTransaction() {
+        // Hide modal.
+        $('#editTransactionModal').modal('toggle');
+        // Block main content.
+        KTAppBlock();
+
+        const id = +$('#editId').val();
+        const description = $('#editDescription').val();
+        const transactionAmount = +$('#editTransactionAmount').val();
+
+        // Clear data.
+        $('#editId').val('');
+        $('#editDescription').val('');
+        $('#editTransactionAmount').val('');
+
+        $.ajax({
+          type: 'PUT',
+          url: TRANSACTIONS_URL,
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          data: JSON.stringify({
+            id,
+            description,
+            transactionAmount,
+          }),
+          success: (transaction) => {
+            const tr = $(
+              `.transaction-id:contains("${transaction.id}")`
+            ).closest('tr');
+
+            // Update row data.
+            $(tr)
+              .find('.transaction-description')
+              .text(transaction.description);
+            $(tr)
+              .find('.transaction-amount')
+              .text(transaction.transactionAmount);
+
+            // Update total transactions sum.
+            updateTotalSum();
+
+            // Unblock main content.
+            unblock();
+          },
+        }).fail(() => {
+          // Display error popup.
+          onFailure();
+          // Unblock main content.
+          unblock();
+        });
+      }
+
+      function handleDelete() {
+        $(document).on('click', '.btn-delete-transaction', function () {
+          const transactionId = $(this).data('transactionId');
+          const tr = $(this).closest('tr');
+
+          swal
+            .fire({
+              title: 'Are You Sure You Want to Delete this transaction?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Delete',
+              cancelButtonText: 'Cancel',
+            })
+            .then((result) => {
+              if (result.value) {
+                // Block main content.
+                KTAppBlock();
+
+                $.ajax({
+                  type: 'DELETE',
+                  url: `${TRANSACTIONS_URL}/${transactionId}`,
+                  success: (transaction) => {
+                    // Remove row from the table.
+                    $(tr).remove();
+
+                    // Update total transactions sum.
+                    updateTotalSum();
+
+                    // Unblock main content.
+                    unblock();
+                  },
+                }).fail(() => {
+                  // Display error popup.
+                  onFailure();
+                  // Unblock main content.
+                  unblock();
+                });
+              }
+            });
+        });
+      }
+
+      function generateRow(transaction) {
+        return `
+            <tr>
+                <td class="transaction-id">
+                  ${transaction.id}
+                </td>
+                <td class="transaction-description">
+                  ${transaction.description}
+                </td>
+                <td class="transaction-amount">
+                  ${transaction.transactionAmount}
+                </td>
+                <td>${transaction.createDate}</td>
+                <td>
+                    ${editButton(transaction.id)}
+                    ${deleteButton(transaction.id)}
+                </td>
+            </tr>
+        `;
+      }
+
+      function getTransactions() {
+        // Block main content.
+        KTAppBlock();
+
+        $.get(TRANSACTIONS_URL, (transactions) => {
+          const tBody = $('#tblTransactions tbody');
+          let rows = '';
+
+          for (const transaction of transactions) {
+            rows += generateRow(transaction);
+          }
+
+          // Display data in the table.
+          tBody.html(rows);
+
+          // Update total transactions sum.
+          updateTotalSum();
+
+          // Unblock main content.
+          unblock();
+        }).fail(() => {
+          // Display error popup.
+          onFailure();
+          // Unblock main content.
+          unblock();
+        });
+      }
+
+      function addTransaction() {
+        // Hide modal.
+        $('#addTransactionModal').modal('toggle');
+        // Block main content.
+        KTAppBlock();
+
+        const description = $('#addDescription').val();
+        const transactionAmount = +$('#addTransactionAmount').val();
+
+        // Clear data.
+        $('#addDescription').val('');
+        $('#addTransactionAmount').val('');
+
+        $.ajax({
+          type: 'POST',
+          url: TRANSACTIONS_URL,
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          data: JSON.stringify({
+            description,
+            transactionAmount,
+          }),
+          success: (transaction) => {
+            const tBody = $('#tblTransactions tbody');
+
+            const row = generateRow(transaction);
+
+            // Add a new row to the table.
+            tBody.append(row);
+
+            // Update total transactions sum.
+            updateTotalSum();
+
+            // Unblock main content.
+            unblock();
+          },
+        }).fail(() => {
+          // Display error popup.
+          onFailure();
+          // Unblock main content.
+          unblock();
+        });
+      }
+
+      function updateTotalSum() {
+        const totalSum = $('.transaction-amount')
+          .toArray()
+          .map((e) => +e.textContent)
+          .reduce((accumulator, amount) => accumulator + amount, 0);
+
+        $('#totalSumValue').text(totalSum);
+      }
+
+      $(document).ready(() => {
+        getTransactions();
+        handleEdit();
+        handleDelete();
+      });
+    </script>
+    <!--end::Page Scripts-->
+  </body>
+
+  <!--end::Body-->
+</html>
